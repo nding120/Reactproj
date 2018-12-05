@@ -1,0 +1,25 @@
+.userInformation{
+    text-align: center;
+    width: 100%;
+}
+
+input{
+    border-radius: 3px;
+    width: 500px;
+    margin: 10px;
+    background-repeat: no-repeat;
+    background-position: right;
+    opacity: 0.5;
+}
+#userInput{
+    background-image: url('../../assets/imgs/userIcon.jpg');
+    background-size: 16px;
+}
+#passwordInput{
+    background-image: url('../../assets/imgs/passwordIcon.jpg');
+    background-size: 15px;
+}
+
+Button{
+    width: 100px;
+}
