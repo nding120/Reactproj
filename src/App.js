@@ -1,27 +1,28 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
-import { Route } from 'react-router-dom';
+
+import { Route,Switch } from 'react-router-dom';
 import './App.css';
-import Logo from './components/logo/logo';
 
 import Login from './containers/login/login';
 import Register from './containers/register/register';
+//import Search from './containers/search/search';
+import AuthRoute from './components/authRoute/authRoute';
 
 class App extends Component {
-  navbarList(){
-    return (
-      <ul style={{"float":"left"}}>
-        <li>product color</li>
-        <li>product price</li>
-        <li>product size</li>
-      </ul>
-    )
+   Art=()=>{
+     return <h1>Ning</h1>
   }
   render() {
     return (
       <div>
-        <Route path='/' component={Login}/>
-        <Route path='/register' component={Register}/>     
+        <AuthRoute></AuthRoute>
+        <Switch>
+            <Route path='/art' component={this.Art}/>
+            <Route path='/' exact component={Login}/>
+            <Route path='/register'component={Register}/>
+            {/* <Route parth='/search' component={Search}/> */}
+
+        </Switch>    
       </div>
       // <div className="App">
       //   <header className="App-header">
