@@ -1,6 +1,8 @@
 .loginContainer{
     background-image: linear-gradient(rgb(205, 89, 0),rgb(255, 237, 163));
     height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 h2{
@@ -11,8 +13,12 @@ h2{
     margin-right:30px;
     padding-top: 20px;
 }
+#userPlace {
+    margin: auto;
+}
 #button {
-    margin-left:780px;
+    left: 400px;
+    position: relative;
 }
 #loginButton{
     width: 100px;

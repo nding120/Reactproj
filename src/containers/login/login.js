@@ -41,11 +41,21 @@ class Login extends Component {
                 </div>
                 <Logo/>
                 <h2>Welcome to Van Gogh World</h2>
-                <UserInfo submit={(event)=>this.SubmitHandler()} change={(event)=>this.InputHandler()}/>
-                <br></br>
-                <div id="button">
-                <button id="loginButton">Log In</button>
-                </div>
+                <table id="userPlace">
+                <tr>
+                    <td>
+                        <UserInfo submit={(event)=>this.SubmitHandler()} change={(event)=>this.InputHandler()}/>
+                        <br></br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="button">
+                        <button id="loginButton">Log In</button>
+                        </div>
+                    </td>
+                </tr>
+                </table>
             </div>
         );
     }
