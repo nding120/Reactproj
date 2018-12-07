@@ -5,7 +5,7 @@ import './App.css';
 
 import Login from './containers/login/login';
 import Register from './containers/register/register';
-//import Search from './containers/search/search';
+
 import AuthRoute from './components/authRoute/authRoute';
 
 class App extends Component {
@@ -17,30 +17,15 @@ class App extends Component {
       <div>
         <AuthRoute></AuthRoute>
         <Switch>
-            <Route path='/art' component={this.Art}/>
+           {/* {this.state.isauthenticated?  <Route path='/art' component={this.Art}/> : null} */}
             <Route path='/' exact component={Login}/>
             <Route path='/register'component={Register}/>
-            {/* <Route parth='/search' component={Search}/> */}
+
 
         </Switch>    
       </div>
-      // <div className="App">
-      //   <header className="App-header">
-      //     <h1 className="search">React Proj search:</h1>
-      //     {3>8?"a":"b"}
-      //     {this.navbarList()}
-      //     <div className="container">
-      //       <div className="row">
-      //         <div className="col-lg-6" style={{"float":"left"}}>
-      //            <p>this is item1</p>
-      //         </div>
-      //         <div className="col-lg-6" style={{"float":"left"}}>
-      //            <p>this is item2</p>
-      //         </div>
-      //       </div>
-      //     </div>
-      //   </header>
-      // </div>
+  
+      // {this.state.isauthenticated? 这个是网页的auth gaurd，如果true，才可以进入art页面
     );
   }
 }

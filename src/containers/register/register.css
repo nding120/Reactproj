@@ -1,9 +1,16 @@
+.signinContainer{
+    background-image: linear-gradient(rgb(205, 89, 0),rgb(255, 237, 163));
+    height: 100%;
+}
+
 h2{
     text-align: center;
 }
 
-button {
+#button {
+    margin-left:780px;
+}
+#signinButton{
     width: 100px;
-    float: right;
-    margin-right: 390px;
+    background-color: rgb(255, 164, 95);
 }
