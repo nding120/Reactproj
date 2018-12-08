@@ -3,7 +3,7 @@ import Logo from '../../components/logo/logo';
 import  UserInfo from '../../components/userInfo/userInfo';
 import  './login.css';
 import {Link} from 'react-router-dom';
-
+import {login} from '../../components/authRoute/userFuncRoute';
 
 class Login extends Component {
     constructor(){
@@ -21,9 +21,23 @@ class Login extends Component {
     }
     SubmitHandler(e){
         e.preventDefault()
-
         /////
-
+        const user={
+            email: this.state.email,
+            password: this.state.password
+        }
+        login(user).then(res=>{
+            if(res.status===200){
+                //如果已有登陆信息的：
+                if(res.data.code===0){
+                    //has registered info already
+                }
+                //if no have, 使用history来控制路由跳转
+                else{
+                this.props.history.push('/profile')/////PRODUCT PAGE
+                }
+            }
+        })
     }
     
     render() {
@@ -42,19 +56,21 @@ class Login extends Component {
                 <Logo/>
                 <h2>Welcome to Van Gogh World</h2>
                 <table id="userPlace">
-                <tr>
-                    <td>
-                        <UserInfo submit={(event)=>this.SubmitHandler()} change={(event)=>this.InputHandler()}/>
-                        <br></br>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div id="button">
-                        <button id="loginButton">Log In</button>
-                        </div>
-                    </td>
-                </tr>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <UserInfo submit={(event)=>this.SubmitHandler()} change={(event)=>this.InputHandler()}/>
+                                <br></br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="button">
+                                <button id="loginButton">Log In</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         );
