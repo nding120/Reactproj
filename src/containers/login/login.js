@@ -16,9 +16,9 @@ class Login extends Component {
         this.InputHandler=this.InputHandler.bind(this)
         this.SubmitHandler=this.SubmitHandler.bind(this)
     }
-    InputHandler(e){
-        this.setState({[e.target.name]: e.target.value})
-    }
+    // InputHandler(e){
+    //     this.setState({[e.target.name]: e.target.value})
+    // }
     SubmitHandler(e){
         e.preventDefault()
         /////

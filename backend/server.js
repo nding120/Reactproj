@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const cors = require('cors')
+//const cors = require('cors')
 const bodyParser= require('body-parser')
 const serverPath=process.env.PORT|| 2000; //set localHost server path
 
@@ -50,7 +50,7 @@ const UserRouter=require('./routing/users');
 // middleware
 //routers
 app.use('/',dataRouter);//this just for try
-app.use('/user',UserRouter);//如果middleware是router的话，先给一个api的前缀“/user”,userRouter是子路由，后缀在users.js文件里：/profile
+app.use('/user',UserRouter);//如果middleware是router的话，先给一个api的前缀“/user”,userRouter是子路由，后缀在users.js文件里：/register  /login...
 
 //app.use("/api/posts", post);
 

@@ -5,11 +5,13 @@
 
 h2{
     text-align: center;
+    background-repeat: no-repeat;
+    background-position: right;
 }
 
-/* #button {
-    margin-left:780px;
-} */
+    /* background-image: url('../../assets/imgs/userIcon.jpg');
+    background-size: 16px; */
+    
 #signinButton{
     width: 100px;
     background-color: rgb(255, 164, 95);

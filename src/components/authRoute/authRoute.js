@@ -8,7 +8,7 @@ class authRoute extends Component {///因为authRoute不是一个标准的路由
     componentDidMount(){
         //**********先判断一下，现在是否已经在register page or sign up page，如果已经在，就返回无***************** */
         const publicList = ['/','/register']
-        console.log(this.props);//location obj -> pathname 可以获取到/register路径信息
+        //console.log(this.props);//location obj -> pathname 可以获取到/register路径信息
         const pathname=this.props.location.pathname
         if(publicList.indexOf(pathname)> -1){ //如果有这个用户信息，就什么都不用返回
             return null;

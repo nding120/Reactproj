@@ -76,7 +76,7 @@ users.post('/login',(req,res)=>{
     })
 })
 
-users.get('/profile',(req,res)=>{ //user 的后缀
+users.get('/product',(req,res)=>{ //user 的后缀
     var decode = jswebtoken.verify(req.headers['authorization'],process.env.SECRET_KEY)
 
     User.findOne({
