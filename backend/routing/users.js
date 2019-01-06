@@ -9,7 +9,7 @@ users.use(cors())
 
 process.env.SECRET_KEY='secret'//jsonwebtoen, require for hash data
 
-users.post('/register',(req,res)=>{
+users.post('/register',(req,res)=>{ ////user 的后缀
     const today= new Date()
     const userData= new User ({
         first_name:req.body.first_name,
@@ -42,7 +42,7 @@ users.post('/register',(req,res)=>{
         res.send('err: '+err)
     })
 })
-////////////////////post login page//////////////////
+////////////////////post login page////////////////// //user 的后缀
 users.post('/login',(req,res)=>{ 
     User.findOne({
         email:req.body.email

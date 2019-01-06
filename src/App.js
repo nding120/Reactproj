@@ -16,6 +16,7 @@ class App extends Component {
     return (
       <div>
         <AuthRoute></AuthRoute>
+        <userFuncRoute></userFuncRoute>
         <Switch>
            {/* {this.state.isauthenticated?  <Route path='/art' component={this.Art}/> : null} */}
             <Route path='/' exact component={Login}/>

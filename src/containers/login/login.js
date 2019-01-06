@@ -16,9 +16,10 @@ class Login extends Component {
         this.InputHandler=this.InputHandler.bind(this)
         this.SubmitHandler=this.SubmitHandler.bind(this)
     }
-    // InputHandler(e){
-    //     this.setState({[e.target.name]: e.target.value})
-    // }
+    InputHandler(e){
+        console.log("loginPage "+e.target.name+": "+e.target.value)
+        this.setState({[e.target.name]: e.target.value})
+    }
     SubmitHandler(e){
         e.preventDefault()
         /////
@@ -27,16 +28,16 @@ class Login extends Component {
             password: this.state.password
         }
         login(user).then(res=>{
-            if(res.status===200){
-                //如果已有登陆信息的：
-                if(res.data.code===0){
-                    //has registered info already
-                }
-                //if no have, 使用history来控制路由跳转
-                else{
+            // if(res.status===200){
+            //     //如果已有登陆信息的：
+            //     if(res.data.code===0){
+            //         //has registered info already
+            //     }
+            //     //if no have, 使用history来控制路由跳转
+            //     else{
                 this.props.history.push('/profile')/////PRODUCT PAGE
-                }
-            }
+                //}
+            //}
         })
     }
     
@@ -59,14 +60,20 @@ class Login extends Component {
                     <tbody>
                         <tr>
                             <td>
-                                <UserInfo submit={(event)=>this.SubmitHandler()} change={(event)=>this.InputHandler()}/>
+                                <UserInfo name="email" change={this.InputHandler} firstway={this.state.emial} placeholder="email"/>
+                                <br></br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <UserInfo name="password" change={this.InputHandler} firstway={this.state.password} placeholder="password"/>
                                 <br></br>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <div id="button">
-                                <button id="loginButton">Log In</button>
+                                <button id="loginButton" onClick={this.SubmitHandler}>Log In</button>
                                 </div>
                             </td>
                         </tr>

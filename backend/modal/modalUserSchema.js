@@ -3,12 +3,12 @@ const mongoose=require('mongoose');
 
 //create user schema
 const userSchema= mongoose.Schema({
-    fisrt_name:{
-        type:String
-    },
-    last_name:{
-        type:String
-    },
+    // fisrt_name:{
+    //     type:String
+    // },
+    // last_name:{
+    //     type:String
+    // },
     email:{
         type:String,
         required:true

@@ -1,7 +1,9 @@
-import axios from 'axios';
+//import axios from 'axios';
+import instance from '../../axios';
 
+ ///////post user info 完成这个动作需要三个文件，这个+server.js+user.js，得到全部的用户信息//////////////
 export const register= newUser =>{
-    return axios
+    return instance
     .post('user/register',{
         first_name:newUser.first_name,
         last_name:newUser.last_name,
@@ -13,7 +15,7 @@ export const register= newUser =>{
 }
 
 export const login= user=>{
-    return axios
+    return instance
     .post('user/login',{
         email:user.email,
         password:user.password
